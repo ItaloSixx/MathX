@@ -12,9 +12,21 @@ class MainController extends Controller
         return view('home');
     }
 
-    public function gereneteExercices()
+    public function gereneteExercices(Request $request)
     {
-        echo 'gerando';
+        //form validation
+        $request->validate([
+            'check_sum' => 'required_without_all:check_subtraction,check_multiplication,check_division',
+            'check_subtraction' => 'required_without_all:check_sum,check_multiplication,check_division',
+            'check_multiplication' => 'required_without_all:check_sum,check_subtraction,check_division',
+            'check_division' => 'required_without_all:check_sum,check_subtraction,check_multiplication',
+            'number_one' => 'required|integer|min:0|max:999',
+            'number_two' => 'required|integer|min:0|max:999',
+            'number_exercices' => 'required|integer|min:0|max:999'
+        ]);
+
+
+        dd($request->all());
     }
 
     public function printExercices()
