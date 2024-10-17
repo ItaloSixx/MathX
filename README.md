@@ -24,6 +24,7 @@ git clone https://github.com/ItaloSixx/MathX.git
 ```
 
 2 . **Instale as Dependências**
+
 Certifique-se de que o Composer esteja instalado e execute o comando:
 
 ```bash
