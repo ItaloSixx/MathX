@@ -51,7 +51,29 @@ class MainController extends Controller
     }
 
 
-    public function printExercises() {}
+    public function printExercises()
+    {
+        if(!session()->has('exercises')){
+            return redirect()->route('home');
+        }
+
+        $exercises = session('exercises');
+
+        echo '<pre>';
+        echo '<h1> Exercicios de Matématica ('. env('APP_NAME') . ')</h1>';
+        echo '<hr>';
+
+        foreach ($exercises as $exercise) {
+            echo '<h2><small>' . str_pad($exercise['exercise_number'], 2, "0", STR_PAD_LEFT) . ') </small>' . $exercise['exercise'] . '</h2>';
+        }
+
+        //resolutions
+        echo '<hr>';
+        echo '<small>Soluções</small>';
+        foreach ($exercises as $exercise) {
+            echo '<h2><small>' . str_pad($exercise['exercise_number'], 2, "0", STR_PAD_LEFT) . ') </small>' . $exercise['resolution'] . '</h2>';
+        }
+    }
 
 
 
@@ -78,7 +100,7 @@ class MainController extends Controller
                     $resolution = $number1 - $number2;
                     break;
                 case 'multiplication':
-                    $exercise = "$number1 x $number2 =";
+                    $exercise = "$number1 x $number2 = ";
                     $resolution = $number1 * $number2;
                     break;
                 case 'division':
@@ -88,7 +110,7 @@ class MainController extends Controller
                         $number2 = 1;
                     }
 
-                    $exercise = "$number1 : $number2 =";
+                    $exercise = "$number1 : $number2 = ";
                     $resolution = $number1 / $number2;
                     break;
             }
@@ -102,7 +124,7 @@ class MainController extends Controller
                 'operation' => $operation,
                 'exercise_number' => $i,
                 'exercise' => $exercise,
-                'sollution' => "$exercise, $resolution"
+                'resolution' => "$exercise $resolution"
             ];
 
     }
