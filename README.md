@@ -22,16 +22,20 @@ Este é um aplicativo web desenvolvido em Laravel que gera exercícios aleatóri
    ```bash
    git clone https://github.com/seuusuario/gerador-de-exercicios-matematicos.git
    cd gerador-de-exercicios-matematicos ´´´
-   4. Como Utiliza
 
-Instale as Dependências: Certifique-se de que o Composer esteja instalado e execute o comando:
+2 . **Instale as Dependências**
+Certifique-se de que o Composer esteja instalado e execute o comando:
 
+```bash
 composer install
+```
 Configuração do Ambiente: Renomeie o arquivo .env.example para .env. Configure o arquivo .env com as informações do seu ambiente. Gere uma chave para a aplicação:
-
+```bash
 php artisan key:generate
-Inicie o Servidor: Execute o comando para iniciar o servidor localmente:
-
+```
+Inicie o Servidor:
+```bash
 php artisan serve
+```
 Acesse 
 
