@@ -23,14 +23,14 @@ Este é um aplicativo web desenvolvido em Laravel que gera exercícios aleatóri
 git clone https://github.com/ItaloSixx/MathX.git
 ```
 
-2 . **Instale as Dependências**
+2. **Instale as Dependências**
 
 Certifique-se de que o Composer esteja instalado e execute o comando:
 
 ```bash
 composer install
 ```
-Configuração do Ambiente: Renomeie o arquivo .env.example para .env. Configure o arquivo .env com as informações do seu ambiente. Gere uma chave para a aplicação:
+3. Configuração do Ambiente: Renomeie o arquivo .env.example para .env. Configure o arquivo .env com as informações do seu ambiente. Gere uma chave para a aplicação:
 ```bash
 php artisan key:generate
 ```
