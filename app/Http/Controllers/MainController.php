@@ -12,7 +12,7 @@ class MainController extends Controller
         return view('home');
     }
 
-    public function gereneteExercises(Request $request)
+    public function gereneteExercises(Request $request): View
     {
         //form validation
         $request->validate([
@@ -37,9 +37,31 @@ class MainController extends Controller
 
         $numberExercises = $request->number_exercises;
 
-        $exercices = [];
+        $exercises = [];
+
+        //generate exercises
         for ($i = 1; $i <= $numberExercises; $i++) {
-            $operation = $operations[array_rand($operations)];
+            $exercises[] =$this->createExercises($i, $operations, $min, $max);
+        }
+
+        //place exercises in sessions
+        $request->session()->put(['exercises' => $exercises]);
+
+        return view('operations', ['exercises' => $exercises]);
+    }
+
+
+    public function printExercises() {}
+
+
+
+    public function exportExercises() {}
+
+
+
+    public function createExercises($i, $operations, $min, $max): array
+    {
+        $operation = $operations[array_rand($operations)];
             $number1 = rand($min, $max);
             $number2 = rand($min, $max);
 
@@ -76,17 +98,12 @@ class MainController extends Controller
                 $resolution = round($resolution, 2);
             }
 
-            $exercices[] = [
+            return [
                 'operation' => $operation,
-                'exercice_number' => $i,
+                'exercise_number' => $i,
                 'exercise' => $exercise,
                 'sollution' => "$exercise, $resolution"
             ];
-        }
-        dd($exercices);
+
     }
-
-    public function printExercises() {}
-
-    public function exportExercises() {}
 }
