@@ -25,7 +25,7 @@
     </h3>
 
     <!-- form -->
-    <form action="{{route('generateExercices')}}" method="post">
+    <form action="{{route('generateExercises')}}" method="post">
         @csrf
         <div class="container border border-primary rounded-3 p-5">
 
@@ -102,16 +102,20 @@
         </div>
 
     </form>
-    <!-- validation error -->
     @if($errors->any())
-        <div class="container">
-            <div class="row">
-                <div class="alert alert-danger text-center mt-3">
-                    Por favor selecione pelo menos uma operação, as parcelas devem ser entre 0 e 999 e o numero de exercicios entre 5 e 50
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-danger text-center mt-3">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
         </div>
+    </div>
     @endif
+
 
 
 
