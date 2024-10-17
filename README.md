@@ -21,7 +21,7 @@ Este é um aplicativo web desenvolvido em Laravel que gera exercícios aleatóri
 1. **Clone o repositório**:
    ```bash
    git clone https://github.com/seuusuario/gerador-de-exercicios-matematicos.git
-   cd gerador-de-exercicios-matematicos ´´´
+´´´
 
 2 . **Instale as Dependências**
 Certifique-se de que o Composer esteja instalado e execute o comando:
