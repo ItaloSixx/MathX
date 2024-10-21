@@ -1,6 +1,6 @@
 # Gerador de Exercícios Matemáticos
 
-Este é um software web desenvolvido em Laravel com o principal intuito de práticar minhas habilidades no framework. O sistema gera exercícios aleatórios de matemática, com todas as operações básicas: **adição, subtração, multiplicação e divisão**. O usuário pode selecionar quais operações incluir, definir o intervalo de números e a quantidade de exercícios desejada e imprimir a lista de exercícios com os resultados.
+Este é um software web desenvolvido em Laravel com o principal intuito de práticar minhas habilidades no framework. O sistema gera exercícios aleatórios de matemática, com todas as operações básicas: **adição, subtração, multiplicação e divisão**. O usuário pode selecionar quais operações incluir, definir o intervalo de números, a quantidade de exercícios desejada e imprimir a lista de exercícios com os resultados.
 
 ## Funcionalidades
 
